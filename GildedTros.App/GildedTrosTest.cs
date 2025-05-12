@@ -69,12 +69,18 @@ namespace GildedTros.App
         [Fact]
         public void ItemQualityNeverAbove50()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Good Wine", SellIn = 5, Quality = 50 } };
+            IList<Item> Items = new List<Item> {
+                new Item { Name = "Good Wine", SellIn = 5, Quality = 50 },
+                new Item { Name = "Backstage passes for Re:factor", SellIn = 5, Quality = 49 }
+                };
             GildedTros app = new GildedTros(Items);
             app.UpdateQuality();
 
             Assert.Equal(4, Items[0].SellIn); 
             Assert.Equal(50, Items[0].Quality);
+
+            Assert.Equal(4, Items[1].SellIn);
+            Assert.Equal(50, Items[1].Quality);
         }
 
         [Fact]
@@ -90,7 +96,7 @@ namespace GildedTros.App
 
         [Fact]
         public void ItemBackstagePassesIncreaseInQuality()
-        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less
             IList<Item> Items = new List<Item> { 
                 new Item { Name = "Backstage passes for Re:factor", SellIn = 15, Quality = 10 }
             };
@@ -103,7 +109,7 @@ namespace GildedTros.App
 
         [Fact]
         public void ItemBackstagePassesIncrease2InQuality10DaysOrLess()
-        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less
             IList<Item> Items = new List<Item> {
                 new Item { Name = "Backstage passes for Re:factor", SellIn = 10, Quality = 10 }
             };
@@ -116,7 +122,7 @@ namespace GildedTros.App
 
         [Fact]
         public void ItemBackstagePassesIncrease3InQuality5DaysOrLess()
-        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less
             IList<Item> Items = new List<Item> {
                 new Item { Name = "Backstage passes for Re:factor", SellIn = 5, Quality = 10 }
             };

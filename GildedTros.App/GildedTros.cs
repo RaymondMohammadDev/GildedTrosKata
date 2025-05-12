@@ -15,9 +15,11 @@ namespace GildedTros.App
 
         private int AddQuality(int quality, int amountToAdd = 1)
         {
-            if (quality < 50)
-                return quality+amountToAdd;
-            return quality;
+            int newQuality = quality + amountToAdd;
+            if (newQuality <= 50)
+                return newQuality;
+            else
+                return newQuality = 50;
         }
 
         private int RemoveQuality(Item item, int amount = 1)
