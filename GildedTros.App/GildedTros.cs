@@ -15,26 +15,25 @@ namespace GildedTros.App
 
         private int AddQuality(int quality, int amountToAdd = 1)
         {
-            if (IsQualityUnder50(quality))
+            if (quality < 50)
                 return quality+amountToAdd;
             return quality;
         }
 
-        private int RemoveQuality(int quality, int amountToRemove = 1)
+        private int RemoveQuality(Item item, int amount = 1)
         {
-            if (IsQualityAbove0(quality))
-                return quality - amountToRemove;
-            return quality;
-        }
+            int newItemQuality = item.Quality;
+            int amountToRemove = amount;
+            if (item.Quality > 0)
+            {
+                newItemQuality = item.Quality - amountToRemove;
 
-        private bool IsQualityUnder50(int quality)
-        {
-            return quality < 50;
-        }
-
-        private bool IsQualityAbove0(int quality)
-        {
-            return quality > 0;
+                if (item.SellIn <= 0 && item.Quality > 1)
+                {
+                    newItemQuality = newItemQuality - amountToRemove;
+                }
+            }
+            return newItemQuality;
         }
 
         public void UpdateQuality()
@@ -46,9 +45,14 @@ namespace GildedTros.App
                     case "Good Wine":
                         item.Quality = AddQuality(item.Quality);
                         break;
+                    case "B-DAWG Keychain":
+                        break;
                     case var n when item.Name.Contains("Backstage passes"):
                         switch (item.SellIn)
                         {
+                            case 0:
+                                item.Quality = 0;
+                                break;
                             case < 6:
                                 item.Quality = AddQuality(item.Quality, 3);
                                 break;
@@ -61,45 +65,13 @@ namespace GildedTros.App
                         }
                         break;
                     default:
-                        if (item.Name != "B-DAWG Keychain")
-                        {
-                            item.Quality = RemoveQuality(item.Quality);
-                        }
+                        item.Quality = RemoveQuality(item);
                         break;
                 }
 
                 if (item.Name != "B-DAWG Keychain")
                 {
                     item.SellIn = item.SellIn - 1;
-                }
-
-                if (item.SellIn < 0)
-                {
-                    if (item.Name != "Good Wine")
-                    {
-                        if (item.Name != "Backstage passes for Re:factor"
-                            && item.Name != "Backstage passes for HAXX")
-                        {
-                            if (item.Quality > 0)
-                            {
-                                if (item.Name != "B-DAWG Keychain")
-                                {
-                                    item.Quality = item.Quality - 1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            item.Quality = item.Quality - item.Quality;
-                        }
-                    }
-                    else
-                    {
-                        if (IsQualityUnder50(item.Quality))
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
-                    }
                 }
             }
         }
