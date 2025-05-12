@@ -19,7 +19,7 @@ namespace GildedTros.App
         }
 
         [Fact]
-        public void ItemUpdateSellInAndQuality()
+        public void ItemUpdateSellDateAndQuality()
         {
             IList<Item> Items = new List<Item> { 
                 new Item { Name = "item1", SellIn = 5, Quality = 10 }
@@ -32,7 +32,7 @@ namespace GildedTros.App
         }
 
         [Fact]
-        public void ItemDegradeSellByDatePassed()
+        public void ItemDegradeSellDatePassed()
         {
             IList<Item> Items = new List<Item> {
                 new Item { Name = "item1", SellIn = 0, Quality = 10 },
@@ -67,7 +67,7 @@ namespace GildedTros.App
         }
 
         [Fact]
-        public void ItemGoodWineIncreases2QualityAfterSellInPassed()
+        public void ItemGoodWineIncreases2QualityAfterSellDatePassed()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Good Wine", SellIn = -1, Quality = 10 } };
             GildedTros app = new GildedTros(Items);
@@ -160,6 +160,28 @@ namespace GildedTros.App
 
             Assert.Equal(-2, Items[1].SellIn);
             Assert.Equal(0, Items[1].Quality);
+        }
+
+        [Fact]
+        public void ItemSmellyDegradeTwiceAsFast()
+        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+            IList<Item> Items = new List<Item> { new Item { Name = "Duplicate Code", SellIn = 5, Quality = 10 }};
+            GildedTros app = new GildedTros(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(4, Items[0].SellIn);
+            Assert.Equal(8, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ItemSmellyDegradeFourTimesAsFastPastSellDate()
+        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+            IList<Item> Items = new List<Item> { new Item { Name = "Duplicate Code", SellIn = 0, Quality = 10 } };
+            GildedTros app = new GildedTros(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(-1, Items[0].SellIn);
+            Assert.Equal(6, Items[0].Quality);
         }
     }
 }
