@@ -52,7 +52,7 @@ namespace GildedTros.App
                     case var n when item.Name.Contains("Backstage passes"):
                         switch (item.SellIn)
                         {
-                            case 0:
+                            case <= 0:
                                 item.Quality = 0;
                                 break;
                             case < 6:

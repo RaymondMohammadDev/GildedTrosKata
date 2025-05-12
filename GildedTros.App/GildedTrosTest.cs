@@ -137,13 +137,18 @@ namespace GildedTros.App
         public void ItemBackstagePassesDropQualityTo0AfterConference()
         {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
             IList<Item> Items = new List<Item> {
-                new Item { Name = "Backstage passes for Re:factor", SellIn = 0, Quality = 10 }
+                new Item { Name = "Backstage passes for Re:factor", SellIn = 0, Quality = 10 },
+                new Item { Name = "Backstage passes for HAXX", SellIn = -1, Quality = 10 }
+
             };
             GildedTros app = new GildedTros(Items);
             app.UpdateQuality();
 
             Assert.Equal(-1, Items[0].SellIn);
             Assert.Equal(0, Items[0].Quality);
+
+            Assert.Equal(-2, Items[1].SellIn);
+            Assert.Equal(0, Items[1].Quality);
         }
     }
 }
