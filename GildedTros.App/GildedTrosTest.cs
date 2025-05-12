@@ -164,7 +164,7 @@ namespace GildedTros.App
 
         [Fact]
         public void ItemSmellyDegradeTwiceAsFast()
-        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+        {
             IList<Item> Items = new List<Item> { new Item { Name = "Duplicate Code", SellIn = 5, Quality = 10 }};
             GildedTros app = new GildedTros(Items);
             app.UpdateQuality();
@@ -175,13 +175,19 @@ namespace GildedTros.App
 
         [Fact]
         public void ItemSmellyDegradeFourTimesAsFastPastSellDate()
-        {//Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
-            IList<Item> Items = new List<Item> { new Item { Name = "Duplicate Code", SellIn = 0, Quality = 10 } };
+        {
+            IList<Item> Items = new List<Item> { 
+                new Item { Name = "Duplicate Code", SellIn = 0, Quality = 10 },
+                new Item { Name = "Long Methods", SellIn = 0, Quality = 3 }
+            };
             GildedTros app = new GildedTros(Items);
             app.UpdateQuality();
 
             Assert.Equal(-1, Items[0].SellIn);
             Assert.Equal(6, Items[0].Quality);
+
+            Assert.Equal(-1, Items[1].SellIn);
+            Assert.Equal(0, Items[1].Quality);
         }
     }
 }
