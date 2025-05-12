@@ -13,9 +13,9 @@ namespace GildedTros.App
             this.Items = Items;
         }
 
-        private int AddQuality(int quality, int amountToAdd = 1)
+        private int AddQuality(Item item, int amountToAdd = 1)
         {
-            int newQuality = quality + amountToAdd;
+            int newQuality = item.Quality + amountToAdd;
             if (newQuality <= 50)
                 return newQuality;
             else
@@ -45,7 +45,10 @@ namespace GildedTros.App
                 switch (item.Name) 
                 {
                     case "Good Wine":
-                        item.Quality = AddQuality(item.Quality);
+                        if (item.SellIn <= 0)
+                            item.Quality = AddQuality(item, 2);
+                        else
+                            item.Quality = AddQuality(item);
                         break;
                     case "B-DAWG Keychain":
                         break;
@@ -56,13 +59,13 @@ namespace GildedTros.App
                                 item.Quality = 0;
                                 break;
                             case < 6:
-                                item.Quality = AddQuality(item.Quality, 3);
+                                item.Quality = AddQuality(item, 3);
                                 break;
                             case < 11:
-                                item.Quality = AddQuality(item.Quality, 2);
+                                item.Quality = AddQuality(item, 2);
                                 break;
                             default:
-                                item.Quality = AddQuality(item.Quality);
+                                item.Quality = AddQuality(item);
                                 break;
                         }
                         break;

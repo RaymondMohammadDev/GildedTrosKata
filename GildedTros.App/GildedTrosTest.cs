@@ -67,6 +67,17 @@ namespace GildedTros.App
         }
 
         [Fact]
+        public void ItemGoodWineIncreases2QualityAfterSellInPassed()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Good Wine", SellIn = -1, Quality = 10 } };
+            GildedTros app = new GildedTros(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(-2, Items[0].SellIn);
+            Assert.Equal(12, Items[0].Quality);
+        }
+
+        [Fact]
         public void ItemQualityNeverAbove50()
         {
             IList<Item> Items = new List<Item> {
