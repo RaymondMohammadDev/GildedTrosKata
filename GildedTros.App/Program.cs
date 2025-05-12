@@ -20,7 +20,7 @@ namespace GildedTros.App
                 new Item {Name = "Backstage passes for HAXX", SellIn = 5, Quality = 49},
                 // these smelly items do not work properly yet
                 new Item {Name = "Duplicate Code", SellIn = 3, Quality = 6},
-                new Item {Name = "Long Methods", SellIn = 3, Quality = 6},
+                new Item {Name = "Long Methods", SellIn = 1, Quality = 6},
                 new Item {Name = "Ugly Variable Names", SellIn = 3, Quality = 6}
             };
 

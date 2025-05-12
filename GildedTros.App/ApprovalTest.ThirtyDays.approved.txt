@@ -10,7 +10,7 @@ Backstage passes for Re:factor, 15, 20
 Backstage passes for Re:factor, 10, 49
 Backstage passes for HAXX, 5, 49
 Duplicate Code, 3, 6
-Long Methods, 3, 6
+Long Methods, 1, 6
 Ugly Variable Names, 3, 6
 
 -------- day 1 --------
@@ -23,9 +23,9 @@ B-DAWG Keychain, -1, 80
 Backstage passes for Re:factor, 14, 21
 Backstage passes for Re:factor, 9, 50
 Backstage passes for HAXX, 4, 50
-Duplicate Code, 2, 5
-Long Methods, 2, 5
-Ugly Variable Names, 2, 5
+Duplicate Code, 2, 4
+Long Methods, 0, 4
+Ugly Variable Names, 2, 4
 
 -------- day 2 --------
 name, sellIn, quality
@@ -37,9 +37,9 @@ B-DAWG Keychain, -1, 80
 Backstage passes for Re:factor, 13, 22
 Backstage passes for Re:factor, 8, 50
 Backstage passes for HAXX, 3, 50
-Duplicate Code, 1, 4
-Long Methods, 1, 4
-Ugly Variable Names, 1, 4
+Duplicate Code, 1, 2
+Long Methods, -1, 0
+Ugly Variable Names, 1, 2
 
 -------- day 3 --------
 name, sellIn, quality
@@ -51,9 +51,9 @@ B-DAWG Keychain, -1, 80
 Backstage passes for Re:factor, 12, 23
 Backstage passes for Re:factor, 7, 50
 Backstage passes for HAXX, 2, 50
-Duplicate Code, 0, 3
-Long Methods, 0, 3
-Ugly Variable Names, 0, 3
+Duplicate Code, 0, 0
+Long Methods, -2, 0
+Ugly Variable Names, 0, 0
 
 -------- day 4 --------
 name, sellIn, quality
@@ -65,9 +65,9 @@ B-DAWG Keychain, -1, 80
 Backstage passes for Re:factor, 11, 24
 Backstage passes for Re:factor, 6, 50
 Backstage passes for HAXX, 1, 50
-Duplicate Code, -1, 1
-Long Methods, -1, 1
-Ugly Variable Names, -1, 1
+Duplicate Code, -1, 0
+Long Methods, -3, 0
+Ugly Variable Names, -1, 0
 
 -------- day 5 --------
 name, sellIn, quality
@@ -80,7 +80,7 @@ Backstage passes for Re:factor, 10, 25
 Backstage passes for Re:factor, 5, 50
 Backstage passes for HAXX, 0, 50
 Duplicate Code, -2, 0
-Long Methods, -2, 0
+Long Methods, -4, 0
 Ugly Variable Names, -2, 0
 
 -------- day 6 --------
@@ -94,7 +94,7 @@ Backstage passes for Re:factor, 9, 27
 Backstage passes for Re:factor, 4, 50
 Backstage passes for HAXX, -1, 0
 Duplicate Code, -3, 0
-Long Methods, -3, 0
+Long Methods, -5, 0
 Ugly Variable Names, -3, 0
 
 -------- day 7 --------
@@ -108,7 +108,7 @@ Backstage passes for Re:factor, 8, 29
 Backstage passes for Re:factor, 3, 50
 Backstage passes for HAXX, -2, 0
 Duplicate Code, -4, 0
-Long Methods, -4, 0
+Long Methods, -6, 0
 Ugly Variable Names, -4, 0
 
 -------- day 8 --------
@@ -122,7 +122,7 @@ Backstage passes for Re:factor, 7, 31
 Backstage passes for Re:factor, 2, 50
 Backstage passes for HAXX, -3, 0
 Duplicate Code, -5, 0
-Long Methods, -5, 0
+Long Methods, -7, 0
 Ugly Variable Names, -5, 0
 
 -------- day 9 --------
@@ -136,7 +136,7 @@ Backstage passes for Re:factor, 6, 33
 Backstage passes for Re:factor, 1, 50
 Backstage passes for HAXX, -4, 0
 Duplicate Code, -6, 0
-Long Methods, -6, 0
+Long Methods, -8, 0
 Ugly Variable Names, -6, 0
 
 -------- day 10 --------
@@ -150,7 +150,7 @@ Backstage passes for Re:factor, 5, 35
 Backstage passes for Re:factor, 0, 50
 Backstage passes for HAXX, -5, 0
 Duplicate Code, -7, 0
-Long Methods, -7, 0
+Long Methods, -9, 0
 Ugly Variable Names, -7, 0
 
 -------- day 11 --------
@@ -164,7 +164,7 @@ Backstage passes for Re:factor, 4, 38
 Backstage passes for Re:factor, -1, 0
 Backstage passes for HAXX, -6, 0
 Duplicate Code, -8, 0
-Long Methods, -8, 0
+Long Methods, -10, 0
 Ugly Variable Names, -8, 0
 
 -------- day 12 --------
@@ -178,7 +178,7 @@ Backstage passes for Re:factor, 3, 41
 Backstage passes for Re:factor, -2, 0
 Backstage passes for HAXX, -7, 0
 Duplicate Code, -9, 0
-Long Methods, -9, 0
+Long Methods, -11, 0
 Ugly Variable Names, -9, 0
 
 -------- day 13 --------
@@ -192,7 +192,7 @@ Backstage passes for Re:factor, 2, 44
 Backstage passes for Re:factor, -3, 0
 Backstage passes for HAXX, -8, 0
 Duplicate Code, -10, 0
-Long Methods, -10, 0
+Long Methods, -12, 0
 Ugly Variable Names, -10, 0
 
 -------- day 14 --------
@@ -206,7 +206,7 @@ Backstage passes for Re:factor, 1, 47
 Backstage passes for Re:factor, -4, 0
 Backstage passes for HAXX, -9, 0
 Duplicate Code, -11, 0
-Long Methods, -11, 0
+Long Methods, -13, 0
 Ugly Variable Names, -11, 0
 
 -------- day 15 --------
@@ -220,7 +220,7 @@ Backstage passes for Re:factor, 0, 50
 Backstage passes for Re:factor, -5, 0
 Backstage passes for HAXX, -10, 0
 Duplicate Code, -12, 0
-Long Methods, -12, 0
+Long Methods, -14, 0
 Ugly Variable Names, -12, 0
 
 -------- day 16 --------
@@ -234,7 +234,7 @@ Backstage passes for Re:factor, -1, 0
 Backstage passes for Re:factor, -6, 0
 Backstage passes for HAXX, -11, 0
 Duplicate Code, -13, 0
-Long Methods, -13, 0
+Long Methods, -15, 0
 Ugly Variable Names, -13, 0
 
 -------- day 17 --------
@@ -248,7 +248,7 @@ Backstage passes for Re:factor, -2, 0
 Backstage passes for Re:factor, -7, 0
 Backstage passes for HAXX, -12, 0
 Duplicate Code, -14, 0
-Long Methods, -14, 0
+Long Methods, -16, 0
 Ugly Variable Names, -14, 0
 
 -------- day 18 --------
@@ -262,7 +262,7 @@ Backstage passes for Re:factor, -3, 0
 Backstage passes for Re:factor, -8, 0
 Backstage passes for HAXX, -13, 0
 Duplicate Code, -15, 0
-Long Methods, -15, 0
+Long Methods, -17, 0
 Ugly Variable Names, -15, 0
 
 -------- day 19 --------
@@ -276,7 +276,7 @@ Backstage passes for Re:factor, -4, 0
 Backstage passes for Re:factor, -9, 0
 Backstage passes for HAXX, -14, 0
 Duplicate Code, -16, 0
-Long Methods, -16, 0
+Long Methods, -18, 0
 Ugly Variable Names, -16, 0
 
 -------- day 20 --------
@@ -290,7 +290,7 @@ Backstage passes for Re:factor, -5, 0
 Backstage passes for Re:factor, -10, 0
 Backstage passes for HAXX, -15, 0
 Duplicate Code, -17, 0
-Long Methods, -17, 0
+Long Methods, -19, 0
 Ugly Variable Names, -17, 0
 
 -------- day 21 --------
@@ -304,7 +304,7 @@ Backstage passes for Re:factor, -6, 0
 Backstage passes for Re:factor, -11, 0
 Backstage passes for HAXX, -16, 0
 Duplicate Code, -18, 0
-Long Methods, -18, 0
+Long Methods, -20, 0
 Ugly Variable Names, -18, 0
 
 -------- day 22 --------
@@ -318,7 +318,7 @@ Backstage passes for Re:factor, -7, 0
 Backstage passes for Re:factor, -12, 0
 Backstage passes for HAXX, -17, 0
 Duplicate Code, -19, 0
-Long Methods, -19, 0
+Long Methods, -21, 0
 Ugly Variable Names, -19, 0
 
 -------- day 23 --------
@@ -332,7 +332,7 @@ Backstage passes for Re:factor, -8, 0
 Backstage passes for Re:factor, -13, 0
 Backstage passes for HAXX, -18, 0
 Duplicate Code, -20, 0
-Long Methods, -20, 0
+Long Methods, -22, 0
 Ugly Variable Names, -20, 0
 
 -------- day 24 --------
@@ -346,7 +346,7 @@ Backstage passes for Re:factor, -9, 0
 Backstage passes for Re:factor, -14, 0
 Backstage passes for HAXX, -19, 0
 Duplicate Code, -21, 0
-Long Methods, -21, 0
+Long Methods, -23, 0
 Ugly Variable Names, -21, 0
 
 -------- day 25 --------
@@ -360,7 +360,7 @@ Backstage passes for Re:factor, -10, 0
 Backstage passes for Re:factor, -15, 0
 Backstage passes for HAXX, -20, 0
 Duplicate Code, -22, 0
-Long Methods, -22, 0
+Long Methods, -24, 0
 Ugly Variable Names, -22, 0
 
 -------- day 26 --------
@@ -374,7 +374,7 @@ Backstage passes for Re:factor, -11, 0
 Backstage passes for Re:factor, -16, 0
 Backstage passes for HAXX, -21, 0
 Duplicate Code, -23, 0
-Long Methods, -23, 0
+Long Methods, -25, 0
 Ugly Variable Names, -23, 0
 
 -------- day 27 --------
@@ -388,7 +388,7 @@ Backstage passes for Re:factor, -12, 0
 Backstage passes for Re:factor, -17, 0
 Backstage passes for HAXX, -22, 0
 Duplicate Code, -24, 0
-Long Methods, -24, 0
+Long Methods, -26, 0
 Ugly Variable Names, -24, 0
 
 -------- day 28 --------
@@ -402,7 +402,7 @@ Backstage passes for Re:factor, -13, 0
 Backstage passes for Re:factor, -18, 0
 Backstage passes for HAXX, -23, 0
 Duplicate Code, -25, 0
-Long Methods, -25, 0
+Long Methods, -27, 0
 Ugly Variable Names, -25, 0
 
 -------- day 29 --------
@@ -416,7 +416,7 @@ Backstage passes for Re:factor, -14, 0
 Backstage passes for Re:factor, -19, 0
 Backstage passes for HAXX, -24, 0
 Duplicate Code, -26, 0
-Long Methods, -26, 0
+Long Methods, -28, 0
 Ugly Variable Names, -26, 0
 
 -------- day 30 --------
@@ -430,6 +430,6 @@ Backstage passes for Re:factor, -15, 0
 Backstage passes for Re:factor, -20, 0
 Backstage passes for HAXX, -25, 0
 Duplicate Code, -27, 0
-Long Methods, -27, 0
+Long Methods, -29, 0
 Ugly Variable Names, -27, 0
 
