@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel.Engine;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace GildedTros.App
 {
@@ -10,80 +13,91 @@ namespace GildedTros.App
             this.Items = Items;
         }
 
+        private int AddQuality(int quality, int amountToAdd = 1)
+        {
+            if (IsQualityUnder50(quality))
+                return quality+amountToAdd;
+            return quality;
+        }
+
+        private int RemoveQuality(int quality, int amountToRemove = 1)
+        {
+            if (IsQualityAbove0(quality))
+                return quality - amountToRemove;
+            return quality;
+        }
+
+        private bool IsQualityUnder50(int quality)
+        {
+            return quality < 50;
+        }
+
+        private bool IsQualityAbove0(int quality)
+        {
+            return quality > 0;
+        }
+
         public void UpdateQuality()
         {
-            for (var i = 0; i < Items.Count; i++)
+            foreach (Item item in Items)
             {
-                if (Items[i].Name != "Good Wine" 
-                    && Items[i].Name != "Backstage passes for Re:factor"
-                    && Items[i].Name != "Backstage passes for HAXX")
+                switch (item.Name) 
                 {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != "B-DAWG Keychain")
+                    case "Good Wine":
+                        item.Quality = AddQuality(item.Quality);
+                        break;
+                    case var n when item.Name.Contains("Backstage passes"):
+                        switch (item.SellIn)
                         {
-                            Items[i].Quality = Items[i].Quality - 1;
+                            case < 6:
+                                item.Quality = AddQuality(item.Quality, 3);
+                                break;
+                            case < 11:
+                                item.Quality = AddQuality(item.Quality, 2);
+                                break;
+                            default:
+                                item.Quality = AddQuality(item.Quality);
+                                break;
                         }
-                    }
-                }
-                else
-                {
-                    if (Items[i].Quality < 50)
-                    {
-                        Items[i].Quality = Items[i].Quality + 1;
-
-                        if (Items[i].Name == "Backstage passes for Re:factor"
-                        || Items[i].Name == "Backstage passes for HAXX")
+                        break;
+                    default:
+                        if (item.Name != "B-DAWG Keychain")
                         {
-                            if (Items[i].SellIn < 11)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
-
-                            if (Items[i].SellIn < 6)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
+                            item.Quality = RemoveQuality(item.Quality);
                         }
-                    }
+                        break;
                 }
 
-                if (Items[i].Name != "B-DAWG Keychain")
+                if (item.Name != "B-DAWG Keychain")
                 {
-                    Items[i].SellIn = Items[i].SellIn - 1;
+                    item.SellIn = item.SellIn - 1;
                 }
 
-                if (Items[i].SellIn < 0)
+                if (item.SellIn < 0)
                 {
-                    if (Items[i].Name != "Good Wine")
+                    if (item.Name != "Good Wine")
                     {
-                        if (Items[i].Name != "Backstage passes for Re:factor"
-                            && Items[i].Name != "Backstage passes for HAXX")
+                        if (item.Name != "Backstage passes for Re:factor"
+                            && item.Name != "Backstage passes for HAXX")
                         {
-                            if (Items[i].Quality > 0)
+                            if (item.Quality > 0)
                             {
-                                if (Items[i].Name != "B-DAWG Keychain")
+                                if (item.Name != "B-DAWG Keychain")
                                 {
-                                    Items[i].Quality = Items[i].Quality - 1;
+                                    item.Quality = item.Quality - 1;
                                 }
                             }
                         }
                         else
                         {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                            item.Quality = item.Quality - item.Quality;
                         }
                     }
                     else
                     {
-                        if (Items[i].Quality < 50)
+                        if (IsQualityUnder50(item.Quality))
                         {
-                            Items[i].Quality = Items[i].Quality + 1;
+                            item.Quality = item.Quality + 1;
                         }
                     }
                 }
